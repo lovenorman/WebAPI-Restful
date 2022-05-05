@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPI_Restful_.Data;
+using WebAPI_Restful_.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<DataInitializer>();
+builder.Services.AddAutoMapper(typeof(AdvertisementProfile));
 
 var app = builder.Build();
 
