@@ -1,0 +1,20 @@
+﻿@model WebAPI_Restful_.ViewModels.AdvertisementIndexViewModel
+
+@{
+    ViewData["Title"] = "All Advertisements";
+}
+
+<h1>All Advertisements</h1>
+
+<ul>
+    @foreach (var ad in Model.Advertisements)
+    {
+        <li>
+            <h3>@ad.Title</h3>
+            <h3>@ad.Author</h3>
+            <h3>@ad.CreateDate</h3>
+            <h3>@ad.Description</h3>
+            <a asp-controller="Advertisement" asp-action="Edit" asp-route-id="@ad.Id">Edit</a>
+        </li>
+    }
+</ul>
