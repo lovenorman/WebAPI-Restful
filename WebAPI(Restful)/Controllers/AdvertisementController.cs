@@ -51,14 +51,6 @@ namespace WebAPI_Restful_.Controllers
         {
             var ad = _mapper.Map<Advertisement>(advertisement);
 
-            //var ad = new Advertisement
-            //{
-            //    Title = advertisement.Title,
-            //    Author = advertisement.Author,
-            //    CreateDate = advertisement.CreateDate,
-            //    Description = advertisement.Description
-            //};
-
             _context.Advertisements.Add(ad);
             _context.SaveChanges();
 
@@ -83,16 +75,6 @@ namespace WebAPI_Restful_.Controllers
                 return NotFound();
 
             return Ok(_mapper.Map<AdvertisementDTO>(ad));
-            
-            //Before Automapper:
-            //var ret = new AdvertisementDTO
-            //{
-            //    Title = ad.Title,
-            //    Author = ad.Author,
-            //    CreateDate = ad.CreateDate,
-            //    Description = ad.Description
-            //};
-
             
         }
     }
