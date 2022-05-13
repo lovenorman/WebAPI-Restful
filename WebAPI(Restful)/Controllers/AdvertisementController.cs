@@ -42,11 +42,6 @@ namespace WebAPI_Restful_.Controllers
 
             _mapper.Map<AdvertisementDTO>(ad);
             
-            //ad.Title = advertisement.Title;
-            //ad.Author = advertisement.Author;
-            //ad.CreateDate = advertisement.CreateDate;
-            //ad.Description = advertisement.Description;
-
             _context.SaveChanges();
             return NoContent();
         }
