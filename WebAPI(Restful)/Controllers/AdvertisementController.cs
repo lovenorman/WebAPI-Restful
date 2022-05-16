@@ -40,7 +40,7 @@ namespace WebAPI_Restful_.Controllers
             if (ad == null)
                 return NotFound();
 
-            _mapper.Map<AdvertisementDTO>(ad);
+            _mapper.Map<AdvertisementDTO>(advertisement);
             
             _context.SaveChanges();
             return NoContent();
@@ -59,7 +59,7 @@ namespace WebAPI_Restful_.Controllers
             return CreatedAtAction(nameof(GetOne), new { id = ad.Id }, adDTO);
         }
 
-        [HttpGet]//Är default
+        [HttpGet]//Default
         public IActionResult Index()
         {
             return Ok(_context.Advertisements.Select(a => _mapper.Map<AdvertisementDTO>(a)));

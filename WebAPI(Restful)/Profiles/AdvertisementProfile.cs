@@ -8,21 +8,18 @@ namespace WebAPI_Restful_.Profiles
     {
         public AdvertisementProfile()
         {
-            //ForAllMembers()?
+            
             CreateMap<AdvertisementDTO, Advertisement>()
-                .ForMember(m => m.Title, opt => opt.MapFrom(src => src.Title))
+                //.ForMember(m => m.Title, opt => opt.MapFrom(src => src.Title))
                 .ReverseMap();
 
-            CreateMap<AdvertisementDTO, Advertisement>()
-                .ForMember(m => m.Author, opt => opt.MapFrom(src => src.Author))
+            CreateMap<AdvertisementsDTO, Advertisement>()
                 .ReverseMap();
 
-            CreateMap<AdvertisementDTO, Advertisement>()
-                .ForMember(m => m.CreateDate, opt => opt.MapFrom(src => src.CreateDate))
+            CreateMap<CreateAdvertisement, Advertisement>()
                 .ReverseMap();
 
-            CreateMap<AdvertisementDTO, Advertisement>()
-                .ForMember(m => m.Description, opt => opt.MapFrom(src => src.Description))
+            CreateMap<UpdateAdvertisement, Advertisement>()
                 .ReverseMap();
         }
     }
